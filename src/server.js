@@ -1,7 +1,7 @@
 import express from "express"
 import path from "path"
 import http from "http"
-import WebSocket from "ws";
+import {Server} from "socket.io"
 
 const app = express();
 
@@ -19,53 +19,73 @@ app.get("/*", (req, res) => {
 });
 
 const httpServer = http.createServer(app);
-const wss = new WebSocket.WebSocketServer({server : httpServer});
 
-const sockets = [];
-let socketIdCnt = 0;
+const io = new Server(httpServer);
 
-function sendSocketMsg(socket, type, payload) {
-    const socketMsg = {
-        type,
-        payload
-    };
-    socket.send(JSON.stringify(socketMsg));
-}
-
-wss.on("connection", socket=>{
-    sockets.push(socket);
-    socket["nickname"] = "Anonym";
-    socket["socketId"] = socketIdCnt++;
-
-    console.log(socket.socketId, socketIdCnt);
-
-    sendSocketMsg(socket, "set_id", socket.socketId);
-    
-    socket.on("message", (data)=>{
-        console.log(JSON.parse(data));
-        const {socketId, 
-            type, 
-            payload} = JSON.parse(data);
-        switch(type){
-            case "nickname":
-                socket["nickname"] = payload;
-                break;
-            case "new_msg":
-                const newMsg = {
-                    nickname : socket["nickname"],
-                    msg : payload
-                };
-                sockets.forEach((sk)=>{
-                    if(sk.socketId !== socketId) {
-                        sendSocketMsg(sk, "new_msg", newMsg);
-                    }
-                })
-                break;
-                default:
-                    break;
+function getPublicRooms() {
+    const publicRooms = [];
+    const {
+        rooms,
+        sids
+    } = io.sockets.adapter;
+    rooms.forEach((_,key)=>{
+        if(!sids.has(key)) {
+            publicRooms.push(key);
         }
     });
-})
+    return publicRooms;
+}
+
+
+
+io.on("connection", socket=> {
+
+    function noticeRoomChange(){
+        io.sockets.emit("change_room", getPublicRooms());
+    }
+    
+    function joinRoom(roomName) {
+        io.to(roomName).emit("join_user", socket.nickname);
+        socket.join(roomName);
+    }
+
+    function leaveRoom(roomName) {
+        socket.leave(roomName);
+        io.to(roomName).emit("leave_user", socket.nickname);
+        noticeRoomChange();
+    }
+
+    socket["nickname"] = "Anon";
+    io.to(socket.id).emit("change_room", getPublicRooms());
+
+    socket.on("create_room", (roomName)=> {
+        joinRoom(roomName);
+        noticeRoomChange();
+    });
+
+    socket.on("join_room", roomName => {
+        joinRoom(roomName);
+    });
+
+    socket.on("leave_room", (roomName) => {
+        leaveRoom(roomName);
+    });
+
+    socket.on("new_msg", (roomName, msg)=>{
+        socket.to(roomName).emit("new_msg", socket.nickname, msg);
+    });
+
+    socket.on("change_nickname", (nickname)=>{
+        socket["nickname"] = nickname;
+    });
+
+    socket.on("disconnecting", ()=> {
+        socket.rooms.forEach((room)=>{
+            leaveRoom(room);
+        });
+    })
+});
+
 
 httpServer.listen(3000, ()=>{
     console.log("http://localhost:3000 Listening!");

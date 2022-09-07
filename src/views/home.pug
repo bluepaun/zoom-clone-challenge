@@ -6,18 +6,27 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Noom
         link(rel="stylesheet", href="https://unpkg.com/mvp.css")
-    body 
-        header 
-            h1 Noom
-        main 
-            form#nickform
-                span
-                label(for="nickname") Set your nickname
-                input(type="text", id="nickname", placeholder="nickname")
-                button Save 
-            ul
-            form#msgform
-                input(type="text", placeholder="Write a message")
-                button Send 
+        link(rel="stylesheet", href="/public/css/styles.css")
+    body
+        header.swing-in-top-bck
+            h1 Welecome to Noom Chat!
+        main
+            .show_room.slide-in-blurred-right
+                .show_room__room_list
+                    h2 Room List
+                    ul.room_list__ul 
+                form.show_room__nick_name
+                    input(type="text", placeholder="Change nickname")
+                    button Change 
+                form.show_room__create_room
+                    input(type="text", placeholder="Create a room")
+                    button Create
+            .hidden.visuallyhidden.show_chat
+                button.show_chat__leave Leave Room
+                ul.show_chat__chat
+                form.show_chat__write_msg
+                    input.show_chat__msg_input(type="text", placeholder="message")
+                    button Send
         footer 
+        script(src="/socket.io/socket.io.js")
         script(src="/public/js/app.js") 
