@@ -1,32 +1,309 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible", content="ie=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Noom
-        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+        title noom
         link(rel="stylesheet", href="/public/css/styles.css")
     body
-        header.swing-in-top-bck
-            h1 Welecome to Noom Chat!
+        header
         main
-            .show_room.slide-in-blurred-right
-                .show_room__room_list
-                    h2 Room List
-                    ul.room_list__ul 
-                form.show_room__nick_name
-                    input(type="text", placeholder="Change nickname")
-                    button Change 
-                form.show_room__create_room
-                    input(type="text", placeholder="Create a room")
+            nav.navi
+                .navi__user_info.shadow-1 
+                    div.user_info__sub_nick
+                        span te
+                    div.user_info__nick 
+                        span test username
+                    div.user_info__edit
+                        span 
+                            i(class="fa-solid fa-user-pen")
+                button.navi__create_room.shadow-1
+                    span  
+                        i(class="fa-solid fa-plus")
+                ul.navi__room_list 
+                    li.room_list__room 
+                        .room__room_icon 
+                            i(class="fa-solid fa-video")
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_create_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 1/2 
+                    li.room_list__room 
+                        .room__room_icon 
+                            i(class="fa-regular fa-message")
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_create_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 1/2 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+                    li.room_list__room 
+                        .room__room_icon 
+                            span.room__sub_nick te 
+                            span.room__sub_nick te
+                        .room__room_info
+                            div
+                                span.room__room_name test room
+                                span.room__room_time 23m
+                            div
+                                span.room__room_des this is a test room!
+                                span.room__room_cnt 100 
+            section.video_room
+                .video_room__video_container 
+                    .video_container__video_header 
+                        span.video_header__title Web Degin
+                        span.video_header__recording 2:01:01
+                    .video_container__video_main 
+                        video(autoplay) 
+                        ul.video_main__video_controller
+                            li
+                                button.video__mute
+                                    i(class="fa-solid fa-microphone")
+                            li 
+                                button.video__camera
+                                    i(class="fa-solid fa-camera")
+                    .video_container__video_main 
+                        video(autoplay) 
+                        ul.video_main__video_controller
+                            li
+                                button.video__mute
+                                    i(class="fa-solid fa-microphone")
+                            li 
+                                button.video__end
+                                    i(class="fa-solid fa-phone-slash") 
+                            li 
+                                button.video__camera
+                                    i(class="fa-solid fa-camera")
+            section.chat_room
+                .chat_room__search.shadow-1
+                    div
+                        i(class="fa-solid fa-magnifying-glass")
+                        input.search__input(placeholder="Search")
+                ul.chat_room__chat
+                    li 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                  li hi! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                    li.chat__mine 
+                        div.user_info__sub_nick
+                            span Te
+                        span hello                 ifdsafdsfsafsafdsafsafdsafdsfdsafdsafsafsafsadfdsafsdafdsafsdafdsafdsfsali hello! 
+                form.chat_room__message 
+                    .message__typer.shadow-1
+                        textarea.message__input(placeholder="Write a message...")
+                        ul.message__option 
+                            li 
+                                i(class="fa-regular fa-image")
+                            li 
+                                i(class="fa-regular fa-face-smile")
+                    button.message__btn.shadow-2
+                        i(class="fa-solid fa-check")
+            .pop-up.hidden 
+                form.pop-up__create_room.hidden 
+                    label(for="room_name") Room Name 
+                    input#room_name(type="text", placeholder="Room Name" ,required)
+                    label(for="room_des") Room Description
+                    input#room_des(type="text", placeholder="Room Description")
+                    label(for="room_cnt") Maximum People
+                    input#room_cnt(type="number", placeholder="Room size", required, min="1", max="2",value="2")
+                    label(for="room_type", required) Room Type
+                    select#room_type(name="")
+                        option(value="video") Video
+                        option(value="message") Message
                     button Create
-            .hidden.visuallyhidden.show_chat
-                button.show_chat__leave Leave Room
-                ul.show_chat__chat
-                form.show_chat__write_msg
-                    input.show_chat__msg_input(type="text", placeholder="message")
-                    button Send
+                        
         footer 
+        //- script(src="https://kit.fontawesome.com/489a2029ed.js" crossorigin="anonymous")
         script(src="/socket.io/socket.io.js")
         script(src="/public/js/app.js") 

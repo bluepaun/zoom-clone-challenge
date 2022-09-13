@@ -1,0 +1,27 @@
+.navi__user_info div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_info__sub_nick,
+.user_info__edit {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+}
+.user_info__sub_nick {
+    border-radius: 45%;
+    background-color: var(--dark-purple);
+    font-weight: 400;
+}
+
+.user_info__edit {
+    opacity: 0.4;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.user_info__edit:hover {
+    opacity: 1;
+    cursor: pointer;
+}

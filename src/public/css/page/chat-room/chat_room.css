@@ -1,0 +1,126 @@
+.chat_room {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: stretch;
+}
+
+.chat_room__search {
+    background-color: white;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px 60px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.chat_room__search > div {
+    display: flex;
+    align-items: center;
+    background-color: #edf0fc;
+    color: #8b9adf;
+    padding: 0px 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.chat_room__search i {
+    margin-right: 10px;
+}
+.search__input {
+    height: 40px;
+    background-color: #edf0fc;
+    color: #8b9adf;
+}
+
+.search__input::placeholder {
+    color: #8b9adf;
+}
+
+.chat_room__chat {
+    width: 99%;
+    height: 100%;
+    overflow: auto;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.chat_room__chat li {
+    display: flex;
+    margin: 8px 0px;
+    align-items: flex-start;
+}
+
+.chat_room__chat li .user_info__sub_nick {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.chat_room__chat li > span {
+    border: 2px solid var(--purple);
+    padding-left: 15px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    border-radius: 23px;
+    overflow-wrap: anywhere;
+}
+
+.chat__mine span {
+    background-color: var(--dark-purple);
+    color: white;
+}
+
+.chat_room__message {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.message__typer {
+    width: 100%;
+    border-radius: 20px;
+    margin: 5px;
+    height: 100px;
+    padding-left: 25px;
+    padding-top: 18px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.message__input {
+    width: 100%;
+    height: 60px;
+    text-align: left;
+    padding: 0px;
+}
+
+.message__option {
+    display: flex;
+}
+
+.message__option li {
+    margin-right: 20px;
+    color: var(--purple);
+    cursor: pointer;
+}
+
+.message__btn {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    margin: 0px 15px;
+    background-color: var(--dark-purple);
+    border-radius: 8px;
+    color: white;
+    font-size: 10px;
+}
